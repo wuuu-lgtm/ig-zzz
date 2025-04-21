@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Instagram Clone V2</title>
-        <link rel="stylesheet" href="style.css" />
-      
-        <!-- ✅ 使用穩定的 Font Awesome CDN -->
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-          integrity="sha512-..."
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer"
-        />
-      </head>
-      <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
 
-        <!-- 導覽列 -->
-        <header class="navbar">
-          <div class="logo">Instagram</div>
-          <nav class="nav-icons">
-            <i class="fas fa-home"></i>
-            <i class="fas fa-search"></i>
-            <i class="fas fa-compass"></i>
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-user"></i>
-          </nav>
-        </header>
-      
-        <!-- 限時動態區 -->
-        <section class="stories" id="stories">
-          <!-- JS 自動產生限時動態 -->
-        </section>
-      
-        <!-- 貼文主區域 -->
-        <main class="feed" id="feed">
-          <!-- JS 自動產生貼文 -->
-        </main>
-      
-        <!-- 限時動態 Modal -->
-        <div class="modal hidden" id="storyModal">
-          <img id="modalImg" src="" />
-        </div>
-      
-        <script src="script.js"></script>
-      </body>
-      </html>
-      
+  <!-- 導覽列 -->
+  <header class="navbar">
+    <div class="logo">Instagram</div>
+    <nav class="nav-icons">
+      <i class="fas fa-home"></i>
+      <i class="fas fa-search"></i>
+      <i class="fas fa-compass"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-user"></i>
+    </nav>
+  </header>
+
+  <!-- 限時動態 -->
+  <section class="stories" id="stories"></section>
+
+  <!-- 貼文主區 -->
+  <main class="feed" id="feed"></main>
+
+  <!-- 限時全螢幕 -->
+  <div class="modal hidden" id="storyModal">
+    <img id="modalImg" src="" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

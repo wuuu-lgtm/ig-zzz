@@ -92,8 +92,13 @@
     color: red;
     animation: pop 0.3s ease;
   }
+  .post-likes {
+    padding: 0 10px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
   .post-caption {
-    padding: 10px;
+    padding: 0 10px 10px;
   }
   .comment-section {
     padding: 10px;
@@ -109,7 +114,7 @@
     font-size: 14px;
   }
   
-  /* Modal */
+  /* 限時 Modal */
   .modal {
     position: fixed;
     top: 0;
@@ -135,3 +140,4 @@
     50% { transform: scale(1.5); }
     100% { transform: scale(1); }
   }
+  

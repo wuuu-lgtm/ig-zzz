@@ -3,8 +3,8 @@ const stories = document.getElementById("stories");
 const modal = document.getElementById("storyModal");
 const modalImg = document.getElementById("modalImg");
 
-// 建立限時動態
-for (let i = 1; i <= 12; i++) {
+// 限時動態
+for (let i = 1; i <= 10; i++) {
   const story = document.createElement("div");
   story.className = "story";
   story.innerHTML = `
@@ -14,7 +14,6 @@ for (let i = 1; i <= 12; i++) {
   stories.appendChild(story);
 }
 
-// 點開限時顯示大圖
 stories.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     modalImg.src = e.target.dataset.full;
@@ -27,19 +26,25 @@ modal.addEventListener("click", () => modal.classList.add("hidden"));
 function createPost() {
   const div = document.createElement("div");
   div.className = "post";
+
+  const likes = Math.floor(Math.random() * 9000 + 1000);
+  const account = "ntnuartsfestival";
+
   div.innerHTML = `
     <div class="post-header">
       <img src="https://i.pravatar.cc/40?img=${Math.floor(Math.random()*70)}" class="avatar">
-      <span class="username">user${Math.floor(Math.random()*100)}</span>
+      <span class="username">${account}</span>
     </div>
     <img src="https://picsum.photos/500/300?random=${Math.random()}" class="post-img">
     <div class="post-actions">
       <i class="fas fa-heart like-btn"></i>
       <i class="fas fa-comment"></i>
+      <i class="fas fa-bookmark"></i>
     </div>
-    <div class="post-caption"><strong>user</strong> 美好的一天 ☀️</div>
+    <div class="post-likes">${likes.toLocaleString()} 個讚</div>
+    <div class="post-caption"><strong>${account}</strong> 定價完成，敬請期待！</div>
     <div class="comment-section">
-      <input type="text" placeholder="留言..." class="comment-input">
+      <input type="text" placeholder="新增留言……" class="comment-input">
       <div class="comments"></div>
     </div>
   `;
@@ -47,14 +52,12 @@ function createPost() {
 }
 for (let i = 0; i < 5; i++) createPost();
 
-// 愛心點擊 + 留言送出
+// 留言與按讚
 document.addEventListener("click", function (e) {
-  // ❤️ 按讚
   if (e.target.classList.contains("like-btn")) {
     e.target.classList.toggle("heart");
   }
 
-  // 💬 留言輸入
   if (e.target.classList.contains("comment-input")) {
     e.target.addEventListener("keypress", function (event) {
       if (event.key === "Enter" && e.target.value.trim() !== "") {
