@@ -4,8 +4,10 @@
     padding: 0;
     font-family: 'Helvetica', sans-serif;
   }
+  
   body {
-    background-color: #fafafa;
+    background-color: #fff;
+    color: #000;
   }
   
   /* 側邊欄 */
@@ -13,30 +15,42 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #000;
-    color: white;
+    background-color: #fff;
+    color: #000;
     height: 100vh;
     width: 240px;
     padding: 20px;
+    border-right: 1px solid #ddd;
   }
+  
   .ig-logo {
     font-size: 24px;
     font-family: 'Segoe UI', sans-serif;
     margin-bottom: 25px;
+    color: #000;
   }
+  
   .side-menu {
     display: flex;
     flex-direction: column;
     gap: 18px;
   }
+  
   .side-menu a {
     text-decoration: none;
-    color: white;
+    color: #000;
     font-size: 16px;
     display: flex;
     align-items: center;
     gap: 12px;
+    padding: 5px 8px;
+    border-radius: 8px;
   }
+  
+  .side-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  
   .badge {
     background-color: red;
     color: white;
@@ -52,20 +66,23 @@
     overflow-x: auto;
     gap: 15px;
     padding: 15px;
-    background-color: #fff;
+    background-color: #fefefe;
     border-bottom: 1px solid #ddd;
     margin-left: 260px;
   }
+  
   .story {
     text-align: center;
     cursor: pointer;
   }
+  
   .story img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 2px solid #f33;
   }
+  
   .story p {
     font-size: 12px;
     margin-top: 5px;
@@ -73,59 +90,73 @@
   
   /* 貼文 */
   .feed {
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     margin-left: 260px;
+    padding: 0 20px;
   }
+  
   .post {
-    background-color: #fff;
+    background-color: #fefefe;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin-bottom: 30px;
+    width: 100%;
   }
+  
   .post-header {
     display: flex;
     align-items: center;
     padding: 10px;
   }
+  
   .avatar {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
   }
+  
   .username {
     font-weight: bold;
   }
+  
   .post-img {
     width: 100%;
     display: block;
   }
+  
   .post-actions {
     padding: 10px;
     font-size: 18px;
   }
+  
   .heart {
     color: red;
     animation: pop 0.3s ease;
   }
+  
   .post-likes {
     padding: 0 10px;
     font-weight: bold;
     margin-top: 5px;
   }
+  
   .post-caption {
     padding: 0 10px 10px;
   }
+  
   .comment-section {
     padding: 10px;
   }
+  
   .comment-input {
     width: 100%;
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+  
   .comments {
     margin-top: 5px;
     font-size: 14px;
@@ -143,11 +174,13 @@
     align-items: center;
     display: flex;
   }
+  
   .modal img {
     max-width: 80%;
     max-height: 80%;
     border-radius: 12px;
   }
+  
   .hidden {
     display: none;
   }
