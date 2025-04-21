@@ -26,8 +26,8 @@
   .ig-logo {
     font-size: 24px;
     font-family: 'Segoe UI', sans-serif;
-    margin-bottom: 25px;
-    color: #000;
+    margin-bottom: 35px; /* 調大距離 */
+    padding-left: 5px;
   }
   
   .side-menu {
@@ -69,6 +69,7 @@
     background-color: #fefefe;
     border-bottom: 1px solid #ddd;
     margin-left: 260px;
+    padding-left: 5px; /* 對齊左邊 LOGO */
   }
   
   .story {
@@ -90,12 +91,11 @@
   
   /* 貼文 */
   .feed {
-    max-width: 800px;
+    max-width: 960px; /* 比原本 800 再寬一點 */
     margin: 20px auto;
     margin-left: 260px;
-    padding: 0 20px;
+    padding: 0 40px;
   }
-  
   .post {
     background-color: #fefefe;
     border: 1px solid #ddd;
