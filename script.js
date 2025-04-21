@@ -37,9 +37,9 @@ function createPost() {
     </div>
     <img src="https://picsum.photos/500/300?random=${Math.random()}" class="post-img">
     <div class="post-actions">
-      <i class="fas fa-heart like-btn"></i>
-      <i class="fas fa-comment"></i>
-      <i class="fas fa-bookmark"></i>
+      <i class="far fa-heart like-btn"></i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-bookmark"></i>
     </div>
     <div class="post-likes">${likes.toLocaleString()} 個讚</div>
     <div class="post-caption"><strong>${account}</strong> 定價完成，敬請期待！</div>
