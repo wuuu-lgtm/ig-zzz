@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instagram Clone</title>
+  <title>Instagram</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <!-- 導覽列 -->
-  <header class="navbar">
-    <div class="logo">Instagram</div>
-    <nav class="nav-icons">
-      <i class="fas fa-home"></i>
-      <i class="fas fa-search"></i>
-      <i class="fas fa-compass"></i>
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-user"></i>
+  <!-- 側邊欄 -->
+<aside class="sidebar">
+    <h1 class="ig-logo">Instagram</h1>
+    <nav class="side-menu">
+      <a href="#"><i class="fas fa-home"></i> 首頁</a>
+      <a href="#"><i class="fas fa-search"></i> 搜尋</a>
+      <a href="#"><i class="fas fa-compass"></i> 探索</a>
+      <a href="#"><i class="fas fa-video"></i> 連續短片</a>
+      <a href="#"><i class="fas fa-comment-dots"></i> 訊息 <span class="badge">3</span></a>
+      <a href="#"><i class="fas fa-heart"></i> 通知</a>
+      <a href="#"><i class="fas fa-plus"></i> 建立</a>
+      <a href="#"><img src="https://i.pravatar.cc/32" class="sidebar-avatar" /> 個人檔案</a>
+      <hr />
+      <a href="#"><i class="fas fa-link"></i> Threads</a>
     </nav>
-  </header>
+  </aside>
 
   <!-- 限時動態 -->
   <section class="stories" id="stories"></section>
