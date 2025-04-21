@@ -1,91 +1,157 @@
-/* 頁面基本樣式 */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #fafafa;
-  color: #333;
-}
-
-.feed {
-  max-width: 600px;
-  margin: 20px auto;
-}
-
-/* 限時動態 */
-.stories {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-}
-.story {
-  text-align: center;
-}
-.story img {
-  border-radius: 50%;
-  border: 2px solid #f33;
-  width: 60px;
-  height: 60px;
-}
-.story p {
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-/* 貼文區 */
-.post {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 20px 0;
-  overflow: hidden;
-}
-
-.post-header {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.username {
-  font-weight: bold;
-}
-
-.post-img {
-  width: 100%;
-  display: block;
-}
-
-.post-actions {
-  padding: 10px;
-  font-size: 20px;
-}
-
-/* 留言區 */
-.comment-section {
-  padding: 10px;
-}
-.comment-input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.comments {
-  margin-top: 5px;
-  font-size: 14px;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", sans-serif;
+  }
+  
+  body {
+    background-color: #fafafa;
+  }
+  
+  /* 🔍 導覽列 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .icons i {
+    margin-left: 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* 🔸 限時動態 */
+  .stories {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    gap: 15px;
+    background: #fff;
+  }
+  .story {
+    text-align: center;
+  }
+  .story img {
+    border-radius: 50%;
+    border: 2px solid #f33;
+    width: 60px;
+    height: 60px;
+  }
+  .story p {
+    font-size: 12px;
+  }
+  
+  /* 🔸 Explore */
+  .explore {
+    padding: 20px;
+  }
+  .search-bar {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .explore-grid img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* 🔸 Feed 貼文區 */
+  .feed {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .post {
+    background: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .username {
+    font-weight: bold;
+  }
+  .post-img {
+    width: 100%;
+  }
+  .post-actions {
+    padding: 10px;
+    font-size: 18px;
+  }
+  .heart {
+    color: red;
+    animation: pop 0.3s;
+  }
+  .post-caption {
+    padding: 10px;
+  }
+  .comment-section {
+    padding: 10px;
+  }
+  .comment-input {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .comments {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  /* 🔸 限時 modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  /* 狀態 */
+  .hidden {
+    display: none !important;
+  }
+  
+  /* ❤️ 按兩下動畫 */
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+  }

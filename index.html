@@ -3,31 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instagram Clone</title>
+  <title>Instagram Clone V2</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/8a8f53fc2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- 限時動態 -->
-  <div class="stories">
-    <div class="story">
-      <img src="https://i.pravatar.cc/60?img=11" />
-      <p>amy</p>
+  <!-- 🔍 導覽列 -->
+  <header class="navbar">
+    <div class="logo">📷 InstaClone</div>
+    <div class="icons">
+      <i class="fas fa-home"></i>
+      <i class="fas fa-search" id="exploreBtn"></i>
+      <i class="fas fa-heart"></i>
     </div>
-    <div class="story">
-      <img src="https://i.pravatar.cc/60?img=14" />
-      <p>john</p>
-    </div>
-    <div class="story">
-      <img src="https://i.pravatar.cc/60?img=5" />
-      <p>tom</p>
-    </div>
-  </div>
+  </header>
 
-  <!-- 主內容：貼文區 -->
+  <!-- 🔸 限時動態區 -->
+  <section class="stories" id="stories">
+    <!-- JS 動態插入多個 story -->
+  </section>
+
+  <!-- 🔸 Explore 模擬區塊 -->
+  <section class="explore hidden" id="explore">
+    <input type="text" placeholder="搜尋" class="search-bar">
+    <div class="explore-grid" id="exploreGrid"></div>
+  </section>
+
+  <!-- 🔸 主動態貼文 -->
   <main class="feed" id="feed">
-    <!-- JS 會自動生成貼文 -->
+    <!-- JS 動態插入貼文 -->
   </main>
+
+  <!-- 🔸 限時全螢幕 Modal -->
+  <div id="storyModal" class="modal hidden">
+    <img id="modalImage" src="" />
+  </div>
 
   <script src="script.js"></script>
 </body>
