@@ -3,17 +3,20 @@ const stories = document.getElementById("stories");
 const modal = document.getElementById("storyModal");
 const modalImg = document.getElementById("modalImg");
 
-// 限時動態
-for (let i = 1; i <= 10; i++) {
+// ✅ 1. 限時動態名稱（請自由修改 storyNames）
+const storyNames = ["Rachel", "Monica", "Phoebe", "Ross", "Chandler", "Joey", "Janice", "Gunther", "Mike", "Carol"];
+
+for (let i = 0; i < storyNames.length; i++) {
   const story = document.createElement("div");
   story.className = "story";
   story.innerHTML = `
-    <img src="https://i.pravatar.cc/60?img=${i}" data-full="https://picsum.photos/600/800?random=${i}" />
-    <p>user${i}</p>
+    <img src="https://i.pravatar.cc/60?img=${i + 1}" data-full="https://picsum.photos/600/800?random=${i + 1}" />
+    <p>${storyNames[i]}</p>
   `;
   stories.appendChild(story);
 }
 
+// ✅ 點擊限時預覽
 stories.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     modalImg.src = e.target.dataset.full;
@@ -22,13 +25,15 @@ stories.addEventListener("click", (e) => {
 });
 modal.addEventListener("click", () => modal.classList.add("hidden"));
 
-// 建立貼文
+// ✅ 2. 建立貼文（作者名稱從你設定的 postNames 隨機挑一個）
+const postNames = ["你自己", "Jasmine", "Peko", "Yuki", "Hana"];
+
 function createPost() {
   const div = document.createElement("div");
   div.className = "post";
 
   const likes = Math.floor(Math.random() * 9000 + 1000);
-  const account = "ntnuartsfestival";
+  const account = postNames[Math.floor(Math.random() * postNames.length)];
 
   div.innerHTML = `
     <div class="post-header">
@@ -37,9 +42,9 @@ function createPost() {
     </div>
     <img src="https://picsum.photos/500/300?random=${Math.random()}" class="post-img">
     <div class="post-actions">
-      <i class="far fa-heart like-btn"></i>
-      <i class="far fa-comment"></i>
-      <i class="far fa-bookmark"></i>
+      <i class="fas fa-heart like-btn"></i>
+      <i class="fas fa-comment"></i>
+      <i class="fas fa-bookmark"></i>
     </div>
     <div class="post-likes">${likes.toLocaleString()} 個讚</div>
     <div class="post-caption"><strong>${account}</strong> 定價完成，敬請期待！</div>
@@ -50,9 +55,11 @@ function createPost() {
   `;
   feed.appendChild(div);
 }
+
+// ✅ 自動產生 5 則貼文
 for (let i = 0; i < 5; i++) createPost();
 
-// 留言與按讚
+// ✅ 留言與按讚互動
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("like-btn")) {
     e.target.classList.toggle("heart");
